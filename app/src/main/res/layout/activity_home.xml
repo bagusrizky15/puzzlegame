@@ -69,7 +69,7 @@
             android:id="@+id/button8"
             style="@style/ButtonStyle"/>
         <Button
-            android:text="I"
+            android:text=""
             android:tag="08"
             android:layout_toEndOf="@id/button8"
             android:layout_below="@id/button6"
