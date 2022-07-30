@@ -14,8 +14,8 @@ import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private int emptyX = 3;
-    private int emptyY = 3;
+    private int emptyX = 2;
+    private int emptyY = 2;
     private RelativeLayout group;
     private Button[][] buttons;
     private int[] tiles;
@@ -33,8 +33,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void loadDatatoViews(){
-        emptyX=3;
-        emptyY=3;
+        emptyX=2;
+        emptyY=2;
         for (int i=0;i<group.getChildCount()-1;i++){
             buttons[i/3][i%3].setText(String.valueOf(tiles[i]));
             buttons[i/3][i%3].setBackgroundResource(android.R.drawable.btn_default);
@@ -104,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void checkWin(){
         boolean isWIn = false;
-        if (emptyX==3&&emptyY==3){
+        if (emptyX==2&&emptyY==2){
             for (int i = 0; i < group.getChildCount()-1; i++) {
                 if (buttons[i/3][i%3].getText().toString().equals(String.valueOf(i+1))){
                     isWIn =true;
