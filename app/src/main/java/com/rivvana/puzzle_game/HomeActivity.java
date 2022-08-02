@@ -3,7 +3,6 @@ package com.rivvana.puzzle_game;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
         loadViews();
         loadNomor();
-        generateNumbers();
+        generateChars();
         loadDatatoViews();
     }
 
@@ -44,17 +43,19 @@ public class HomeActivity extends AppCompatActivity {
         buttons[emptyX][emptyY].setBackgroundColor(ContextCompat.getColor(this,R.color.colorFreeButton));
     }
 
-    private void  generateNumbers(){
+    private char generateChars(){
         int n=9;
         Random random = new Random();
         while (n>1){
-            int randomNum = random.nextInt(n--);
-            int temp = tiles[randomNum];
-            tiles[randomNum]=tiles[n];
+            int randomChar = random.nextInt(52);
+            char c = (char) (random.nextInt(9)+'a');
+            int temp = tiles[c];
+            tiles[randomChar]=tiles[n];
             tiles[n] = temp;
         }
         if (!isSolvable())
-            generateNumbers();
+            generateChars();
+
     }
 
     private boolean isSolvable(){
